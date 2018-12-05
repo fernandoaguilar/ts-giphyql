@@ -1,0 +1,25 @@
+type Gif {
+  id: ID! @unique
+  giphyId: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  url: String!
+  rating: String!
+  trendingDatetime: String
+  title: String
+  likedBy: [User!]!
+}
+
+# type Likes {
+#   gif: Gif!
+#   user: User!
+# }
+
+type User {
+  id: ID! @unique
+  email: String! @unique
+  password: String!
+  name: String!
+  gifs: [Gif!]!
+}
+

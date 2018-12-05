@@ -1,0 +1,27 @@
+{
+  "name": "ts-reactionary",
+  "scripts": {
+    "start": "dotenv -- nodemon -e ts,graphql -x ts-node src/index.ts",
+    "dev": "npm-run-all --parallel start playground",
+    "debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect src/index.ts",
+    "playground": "graphql playground",
+    "build": "rimraf dist && tsc"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "2.4.3",
+    "graphql-yoga": "1.16.7",
+    "jsonwebtoken": "8.4.0",
+    "prisma-client-lib": "^1.21.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.2",
+    "@types/request": "^2.48.1",
+    "dotenv-cli": "1.4.0",
+    "nodemon": "1.18.7",
+    "npm-run-all": "4.1.5",
+    "prisma": "1.21.1",
+    "ts-node": "6.2.0",
+    "typescript": "3.2.1"
+  }
+}

@@ -1,0 +1,38 @@
+# import Post from "./generated/prisma.graphql"
+
+type Query {
+  trending: [Gif!]!
+  searchGifs(searchTerm: String!): [Gif!]!
+  me: User
+  userGifs: [Gif!]
+  storedGifs: [Gif!]
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  saveGif(gifID: String!): Gif!
+}
+
+# type Subscription {
+# }
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+}
+
+type Gif {
+  id: ID!
+  url: String!
+  rating: String!
+  trending_datetime: String
+  title: String!
+  likedBy: [User!]
+}
